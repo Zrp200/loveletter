@@ -19,7 +19,7 @@ class LoveLetter
       if active_players.count == 1
         active_players.first
       else
-        active_players.sort_by { |a| a.hand.first }.last
+        active_players.sort_by { |a| a.hand }.last
       end
     else
       :undetermined

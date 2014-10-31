@@ -23,8 +23,7 @@ describe LoveLetter do
   context 'game initialization' do
     it 'should deal a card to every player from the deck' do
       game.players.each do |player|
-        expect(player.hand.count).to eq 1
-        expect(player.hand.first).to be_kind_of(Card)
+        expect(player.hand).to be_kind_of(Card)
       end
     end
 

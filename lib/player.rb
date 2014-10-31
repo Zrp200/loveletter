@@ -1,10 +1,21 @@
 class Player
   attr_accessor :status
-  attr_reader :hand
 
   def initialize
     @hand = []
     @status = :active
+  end
+
+  def hand=(value)
+    @hand = [value]
+  end
+
+  def hand
+    if @hand.count == 1
+      @hand.first
+    else
+      @hand
+    end
   end
 
   def draw_from(deck)

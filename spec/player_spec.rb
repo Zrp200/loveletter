@@ -15,7 +15,7 @@ describe Player do
 
     it 'should have a hand when it draws a card' do
       player.draw_from(deck)
-      expect(player.hand).to eq [card]
+      expect(player.hand).to eq card
     end
   end
 
