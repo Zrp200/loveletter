@@ -6,10 +6,7 @@ class LoveLetter
   attr_reader :deck, :players, :log, :status
 
   def initialize(players: 2)
-    @players = players.times.map { Player.new }
-    @deck = Deck.new
-    @log = []
-    @status = :in_progress
+    @players, @deck, @log, @status = players.times.map { Player.new }, Deck.new, Array.new, :in_progress
     deal_cards
     exile_card
   end
@@ -45,13 +42,11 @@ class LoveLetter
 
   private
 
-  def exile_card
-    deck.exile_card
-  end
+  def exile_card; deck.exile_card; end
 
   def deal_cards
     players.each do |player|
-      player.draw_from(deck)
+      player.draw_from deck
     end
   end
 end
