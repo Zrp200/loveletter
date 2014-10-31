@@ -30,9 +30,7 @@ class Deck
     end
   end
 
-  def exile_card
-    @exiled_card = self.draw
-  end
+  def exile_card; @exiled_card = self.draw; end
 
   private
 
