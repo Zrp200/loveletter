@@ -65,13 +65,15 @@ describe LoveLetter do
       end
 
       context 'highest card wins' do
-        class FakeDeck
+        class BFakeDeck
+          attr_accessor :deck
           def initialize(card); @deck = card; end;
           def draw; @deck.pop; end;
         end
 
-        let(:losing_deck) { FakeDeck.new([Card.new(:guard, 1, :none), Card.new(:guard, 1, :none)]) }
-        let(:winning_deck) { FakeDeck.new([Card.new(:baron, 3, :none)]) }
+        # TODO: Ask some abouy why this doesn't work
+        let(:losing_deck) { BFakeDeck.new([Card.new(:guard, 1, :none), Card.new(:guard, 1, :none)]) }
+        let(:winning_deck) { BFakeDeck.new([Card.new(:baron, 3, :none)]) }
 
         it 'chooses the player with the highest value card' do
           losers.each do |loser|
