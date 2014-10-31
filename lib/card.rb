@@ -4,9 +4,7 @@ class Card
   attr_reader :name, :value, :ability
 
   def initialize(name, value, ability)
-    @name = name
-    @value = value
-    @ability = ability
+    @name, @value, @ability = name, value, ability
   end
 
   def <=>(other_card)
