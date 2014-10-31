@@ -1,9 +1,7 @@
 require 'card'
 
 class Countess < Card
-  def initialize
-    super(:countess, 7, ability)
-  end
+  def initialize; super(:countess, 7, ability); end
 
   def self.ability
     <<-TEXT
